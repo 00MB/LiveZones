@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Timezones - Create</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active">Create an event</h2>
+
+        <!-- Create event Form -->
+        {% block content %}
+        <form action="" method="post">
+          <p>
+            {{ form.eventname.label }}<br />
+            {{ form.eventname(size=32) }}
+          </p>
+          <p>
+            {{ form.eventdate.label }}<br />
+            {{ form.eventdate }}
+          </p>
+          <button>{{ form.submit() }}</button>
+        </form>
+        {% endblock%}
+
+        <!-- Footer -->
+        <div id="formFooter">
+          <a href="index.html">Back to menu</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

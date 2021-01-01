@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/jquery.ganttView.css"
+    />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Timeline</title>
+    <style media="screen">
+      header,
+      footer {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>EVENT NAME</h2>
+      <h2>Code</h2>
+    </header>
+    <div class="ganttChart"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript" src="../js/jquery.ganttView.js"></script>
+    <script type="text/javascript" src="../json/data.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $(".ganttChart").ganttView({
+          slideWidth: 900,
+          data: ganttData,
+        });
+      });
+    </script>
+    <footer>
+      <button
+        type="submit"
+        onclick="document.location.href=this.getAttribute('href');"
+        href="/create_subtimeline"
+      >
+        Add subtimeline
+      </button>
+      <button
+        type="submit"
+        onclick="document.location.href=this.getAttribute('href');"
+        href="index.html"
+      >
+        Return to menu
+      </button>
+    </footer>
+  </body>
+</html>

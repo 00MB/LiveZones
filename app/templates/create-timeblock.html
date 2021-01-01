@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Timeblock - Add</title>
+    <style>
+      button {
+        height: 50px;
+      }
+      h2 {
+        padding: 5px;
+      }
+      #formContent {
+        max-width: 550px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active">When are you busy?</h2>
+
+        <!-- Icon -->
+
+        <!-- Login Form -->
+        <form method="post">
+          <input
+            required
+            type="number"
+            id="starttime"
+            name="starttime"
+            max="2400"
+            min="0"
+            placeholder="Start time (HHMM)"
+          />
+          <input
+            required
+            type="number"
+            id="endtime"
+            name="endtime"
+            max="2400"
+            min="0"
+            placeholder="End time (HHMM)"
+          />
+          <button
+            type="submit"
+            onclick="document.location.href=this.getAttribute('href2');"
+            href2="/timeline"
+          >
+            Add timeblock
+          </button>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a href="..">Back to menu</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
