@@ -4,5 +4,5 @@ from wtforms.validators import DataRequired
 
 class Newevent(FlaskForm):
     eventname = StringField('eventname', validators=[DataRequired()])
-    eventdate = DateTimeField('date', validators=[DataRequired()])
+    eventkey = StringField('eventkey')
     submit = SubmitField('Create event')

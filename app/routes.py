@@ -11,6 +11,8 @@ def index():
 def newevent():
     form = Newevent()
     if form.validate_on_submit():
-        flash('Event created request')
+        event = Timeline(eventname = form.eventname.data, eventkey = form.eventkey.data)
+        db.session.add(user)
+        db.session.commit()
         return redirect('/index')
     return render_template('create-timeline.html', title="test", form=form)
