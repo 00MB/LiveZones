@@ -13,15 +13,15 @@
       <div id="formContent">
         <!-- Tabs Titles -->
         <h2>Create an event</h2>
-
         <!-- Create event Form -->
         {% block content %}
         <form action="" method="post">
+          {{ form.csrf_token }}
           <p>
             {{ form.eventname.label }}<br />
             {{ form.eventname(size=32) }}
           </p>
-          <button>{{ form.submit() }}</button>
+          <p>{{ form.submit() }}</p>
         </form>
         {% endblock%}
 
