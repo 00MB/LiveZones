@@ -1,16 +1,10 @@
 /* BASIC */
 
-@font-face {
-  font-family: nexa;
-  src: url(../../fonts/Nexa-Bold.otf);
-}
-
 html {
   background-color: #56baed;
 }
 
 body {
-  font-family: "nexa";
   height: 100vh;
   padding: 0;
   margin: 0;

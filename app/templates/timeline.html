@@ -5,11 +5,19 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/jquery.ganttView.css"
+      href="../static/css/jquery.ganttView.css"
     />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <title>Timeline</title>
     <style media="screen">
+      body {
+        font-family: "Lato", sans-serif;
+      }
       header,
       footer {
         display: grid;
@@ -19,8 +27,8 @@
   </head>
   <body>
     <header>
-      <h2>EVENT NAME</h2>
-      <h2>Code</h2>
+      <h2>Name: {{ request.cookies.get('eventname') }}</h2>
+      <h2>Code: {{ request.cookies.get('eventkey') }}</h2>
     </header>
     <div class="ganttChart"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
