@@ -20,7 +20,7 @@ def newevent():
     if form.validate_on_submit():
         event = Timeline(eventname = form.eventname.data, eventkey = key_generator())
         print(event)
-        res = make_response(redirect(url_for('timeline')))
+        res = make_response(redirect(url_for('timeline'))) #For cookie generation
         res.set_cookie('eventname', event.eventname)
         res.set_cookie('eventkey', event.eventkey)
         db.session.add(event)
