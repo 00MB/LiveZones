@@ -32,6 +32,5 @@ def joinevent(code):
 @app.route('/newtimeline/<code>')
 def newtimeline(code):
     form = Newtimeline()
-    if form.validate_on_submit():
-        block = 
+    return render_template('create-block.html', form=form)
 

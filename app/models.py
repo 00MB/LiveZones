@@ -23,8 +23,7 @@ class Timeline(db.Model):
 
 class Timeblock(db.Model):
     blockid = db.Column(db.Integer, index=True, primary_key=True)
-    notes = db.Column(db.String(20), default="None")
-    recurring = db.Column(db.Boolean)
     blockstart = db.Column(db.DateTime)
     blockend = db.Column(db.DateTime)
+    recurring = db.Column(db.Boolean)
     timelineid = db.Column(db.Integer, index=True, db.ForeignKey('timeline.timelineid'))
