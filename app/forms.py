@@ -11,4 +11,4 @@ class Newtimeline(FlaskForm):
     submit = SubmitField('Submit')
     blockstart = StringField('start', validators=[DataRequired()])
     blockend = StringField('finish', validators=[DataRequired()])
-    recurring = BooleanField('recurring' Default=False)
+    recurring = BooleanField('recurring')

@@ -11,19 +11,18 @@ class Event(db.Model):
     eventkey = db.Column(db.String(6), index=True, unique=True, primary_key=True)
     eventname = db.Column(db.String(64), index=True)
 
-
     def __repr__(self):
         return f"name: {self.eventname}, key: {self.eventkey}"
 
 class Timeline(db.Model):
-    timelineid = db.Column(db.Integer, index=True, primary_key=True)
+    id = db.Column(db.Integer, index=True, primary_key=True)
     name = db.Column(db.String(25))
     eventkey = db.Column(db.String(6), db.ForeignKey('event.eventkey'))
-    blocks = db.relationship('Timeblock', backref='blockid', lazy='dynamic')
+    blocks = db.relationship('Timeblock', backref='blockids', lazy='dynamic')
 
 class Timeblock(db.Model):
     blockid = db.Column(db.Integer, index=True, primary_key=True)
     blockstart = db.Column(db.DateTime)
     blockend = db.Column(db.DateTime)
-    recurring = db.Column(db.Boolean)
-    timelineid = db.Column(db.Integer, index=True, db.ForeignKey('timeline.timelineid'))
+    recurring = db.Column(db.Boolean, default=False)
+    timelineid = db.Column(db.Integer, db.ForeignKey('timeline.id'))

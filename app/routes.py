@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, make_response, request
 from app import app, db
-from app.forms import Newevent
+from app.forms import Newevent, Newtimeline
 from app.models import Event, Timeline, key_generator
 
 @app.route('/')

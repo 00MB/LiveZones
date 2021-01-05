@@ -46,18 +46,11 @@
     <footer>
       <button
         type="submit"
-        onclick="document.location.href=this.getAttribute('href');"
-        href="/create_subtimeline"
+        onclick="window.location.href='/newtimeline/{{ event.eventkey }}';"
       >
         Add subtimeline
       </button>
-      <button
-        type="submit"
-        onclick="document.location.href=this.getAttribute('href');"
-        href="/"
-      >
-        Return to menu
-      </button>
+      <button type="submit" onclick="">Return to menu</button>
     </footer>
   </body>
 </html>
