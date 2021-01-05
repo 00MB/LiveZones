@@ -19,14 +19,14 @@
     <div class="wrapper">
       <div id="formContent">
         <!-- Tabs Titles -->
-        <h2>When are you available?</h2>
+        <h2>Create an event</h2>
         <!-- Create event Form -->
         {% block content %}
         <form action="" method="post">
           {{ form.csrf_token }}
           <p>
-            <br />
-            {{ form.name(size=32) }}
+            Event name<br />
+            {{ form.eventname(size=32) }}
           </p>
           <button>{{ form.submit() }}</button>
         </form>

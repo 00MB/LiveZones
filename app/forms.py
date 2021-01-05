@@ -9,6 +9,10 @@ class Newevent(FlaskForm):
 class Newtimeline(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class Newtimeblock(FlaskForm):
+    name = StringField('name', validators=[DataRequired()])
     blockstart = StringField('start', validators=[DataRequired()])
     blockend = StringField('finish', validators=[DataRequired()])
     recurring = BooleanField('recurring')
+    submit = SubmitField('Submit')
