@@ -20,18 +20,16 @@ def newevent():
     if form.validate_on_submit():
         event = Timeline(eventname = form.eventname.data, eventkey = key_generator())
         print(event)
-        res = make_response(redirect(url_for('timeline'))) #For cookie generation
-        res.set_cookie('eventname', event.eventname)
-        res.set_cookie('eventkey', event.eventkey)
         db.session.add(event)
         db.session.commit()
-        return res
+        return redirect('/'+event.eventkey)
     return render_template('create-timeline.html', title="test", form=form)
-
-@app.route('/joinevent')
 
 @app.route('/<code>')
 def test(code):
     print("hello")
     print(code)
-    return render_template('timeline.html')
+    event = Timeline.query.filter_by(eventkey=code).first()
+    if event is None:
+        return render_template('404.html'), 404
+    return render_template('timeline.html', event=event)

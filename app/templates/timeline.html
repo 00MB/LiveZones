@@ -27,8 +27,8 @@
   </head>
   <body>
     <header>
-      <h2>Name: {{ request.cookies.get('eventname') }}</h2>
-      <h2>Code: {{ request.cookies.get('eventkey') }}</h2>
+      <h1>Name: {{ event.eventname }}</h1>
+      <h1>Code: {{ event.eventkey }}</h1>
     </header>
     <div class="ganttChart"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

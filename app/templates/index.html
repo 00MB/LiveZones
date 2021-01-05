@@ -27,6 +27,14 @@
         max-width: 550px;
       }
     </style>
+    <script>
+      function joinEvent() {
+        var code = prompt("please enter group code:");
+        if (code != null) {
+          window.location.replace("/" + code);
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -42,11 +50,7 @@
         >
           <i class="fas fa-user-plus fa-3x"></i>
         </button>
-        <button
-          type="submit"
-          onclick="document.location.href=this.getAttribute('href');"
-          href="joinevent"
-        >
+        <button type="submit" onclick="joinEvent()">
           <i class="fas fa-users fa-3x"></i>
         </button>
       </div>
