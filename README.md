@@ -1,3 +1,3 @@
 # GlobalZones
 
-00MB updates to the HackUMass discarded project "Timezone planner"
+## This is an update from a hackathon project we scrapped
