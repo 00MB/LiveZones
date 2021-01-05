@@ -2,13 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <script
       src="https://kit.fontawesome.com/0e7cbfa068.js"
       crossorigin="anonymous"
     ></script>
     <title>Timezones</title>
     <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
       button {
         height: 100px;
       }
@@ -25,16 +33,20 @@
       <div id="formContent">
         <h2 style="color: grey; font-size: 50px">Welcome</h2>
         <br />
-        <h2 class="active">Create a timeline</h2>
-        <h2 class="active">Join a timeline</h2>
+        <h2 class="active">Create an event</h2>
+        <h2 class="active">Join an event</h2>
         <button
           type="submit"
           onclick="document.location.href=this.getAttribute('href');"
-          href="create-timeline.html"
+          href="newevent"
         >
           <i class="fas fa-user-plus fa-3x"></i>
         </button>
-        <button type="submit" onclick="alert('Enter code');">
+        <button
+          type="submit"
+          onclick="document.location.href=this.getAttribute('href');"
+          href="joinevent"
+        >
           <i class="fas fa-users fa-3x"></i>
         </button>
       </div>

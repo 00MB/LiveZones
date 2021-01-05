@@ -19,14 +19,14 @@
     <div class="wrapper">
       <div id="formContent">
         <!-- Tabs Titles -->
-        <h2>Create an event</h2>
+        <h2>Join event</h2>
         <!-- Create event Form -->
         {% block content %}
-        <form action="" method="post">
+        <form action="" method="get">
           {{ form.csrf_token }}
           <p>
-            Event name<br />
-            {{ form.eventname(size=32) }}
+            Code<br />
+            {{ form.eventcode(size=32) }}
           </p>
           <button>{{ form.submit() }}</button>
         </form>
@@ -34,7 +34,7 @@
 
         <!-- Footer -->
         <div id="formFooter">
-          <a href="index.html">Back to menu</a>
+          <a href="/">Back to menu</a>
         </div>
       </div>
     </div>

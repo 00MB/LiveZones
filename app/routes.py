@@ -6,7 +6,7 @@ from app.models import Timeline, key_generator
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello"
+    return render_template('index.html')
 
 @app.route('/timeline')
 def timeline():
@@ -27,3 +27,11 @@ def newevent():
         db.session.commit()
         return res
     return render_template('create-timeline.html', title="test", form=form)
+
+@app.route('/joinevent')
+
+@app.route('/<code>')
+def test(code):
+    print("hello")
+    print(code)
+    return render_template('timeline.html')
