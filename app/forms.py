@@ -12,6 +12,6 @@ class Newtimeline(FlaskForm):
     submit = SubmitField('Submit')
 
 class Newtimeblock(FlaskForm):
-    blockstart = DateTimeLocalField('start', validators=[DataRequired()])
-    blockend = DateTimeLocalField('finish', validators=[DataRequired()])
+    blockstart = DateTimeLocalField('start', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
+    blockend = DateTimeLocalField('finish', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
     submit = SubmitField('Submit')
