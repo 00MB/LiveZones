@@ -118,24 +118,23 @@ footer {
   background-color: #fff;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 input[type="text"]:placeholder,
 input[type="password"]:placeholder,
 input[type="number"]:placeholder {
   color: #cccccc;
 }
 
-.busy {
-  background-color: red;
+.neweventmessage,
+.brief {
+  text-align: center;
 }
 
-.available {
-  background-color: green;
-}
-
-.ganttChart {
-  padding: 10px;
-  margin: auto;
-  border: 15px solid #5fbae9;
-  width: 1000px;
-  background-color: #fff;
+.brief {
+  margin: 3px;
 }

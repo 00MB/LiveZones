@@ -15,7 +15,7 @@
         font-family: "Lato", sans-serif;
       }
       header,
-      footer {
+      .grid {
         display: grid;
         grid-template-columns: auto auto;
       }
@@ -39,7 +39,7 @@
       //Parameters that the chart expects
       let params = {
         sidebarHeader: "Unused right now",
-        noDataFoundMessage: "<h1 style='text-align:center'>Add a subtimeline to start</h1>",
+        noDataFoundMessage: "<div class='neweventmessage'><h1>Add a subtimeline to start</h1></div>",
         startTimeAlias: "blockstart",
         endTimeAlias: "blockend",
         idAlias: "timelineid",
@@ -56,18 +56,24 @@
       ganttChart.refreshData();
     </script>
     <footer>
-      <button
-        type="submit"
-        onclick="window.location.href='/newtimeline/{{ event.eventkey }}';"
-      >
-        Add subtimeline
-      </button>
-      <button
-        type="submit"
-        onclick="window.location.href='/newtimeblock/{{ event.eventkey }}';"
-      >
-        Add timeblock
-      </button>
+      <div class="grid">
+        <button
+          type="submit"
+          onclick="window.location.href='/newtimeline/{{ event.eventkey }}';"
+        >
+          Add timeline
+        </button>
+        <button
+          type="submit"
+          onclick="window.location.href='/newtimeblock/{{ event.eventkey }}';"
+        >
+          Add available time
+        </button>
+      </div>
+      <p class="brief">
+        HOW TO USE: First, create your own timeline, once created add a time and
+        your timeline will show. You can add multiple times.
+      </p>
     </footer>
   </body>
 </html>
