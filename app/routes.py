@@ -3,6 +3,7 @@ from app import app, db
 from app.forms import Newevent, Newtimeline, Newtimeblock
 from app.models import Event, Timeline, Timeblock, key_generator
 import sqlite3
+import json
 
 def dict_factory(cursor, row):
     d = {}
@@ -37,9 +38,9 @@ def joinevent(code):
     conn = sqlite3.connect('app.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
-    alltimes = cur.execute('SELECT * FROM Event;').fetchall()
-    print(alltimes)
-    return render_template('timeline.html', event=event)
+    timetable = cur.execute("SELECT Timeblock.timelineid, Timeline.name, blockstart, blockend FROM Timeline, Timeblock WHERE Timeline.id = Timeblock.timelineid AND eventkey = (?);", (code,)).fetchall()
+    print(timetable)
+    return render_template('timeline.html', event=event, timetable=timetable)
 
 @app.route('/newtimeline/<code>', methods=['GET', 'POST'])
 def newtimeline(code):
