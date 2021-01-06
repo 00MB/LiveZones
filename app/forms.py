@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import BooleanField, StringField, SubmitField
-from wtforms.fields.html5 import DateTimeLocalField
 from wtforms.validators import DataRequired
+from wtforms_components import TimeField
 
 class Newevent(FlaskForm):
     eventname = StringField('eventname', validators=[DataRequired()])
@@ -12,6 +12,6 @@ class Newtimeline(FlaskForm):
     submit = SubmitField('Submit')
 
 class Newtimeblock(FlaskForm):
-    blockstart = DateTimeLocalField('start', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
-    blockend = DateTimeLocalField('finish', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
+    blockstart = TimeField('start', validators=[DataRequired()])
+    blockend = TimeField('finish', validators=[DataRequired()])
     submit = SubmitField('Submit')
