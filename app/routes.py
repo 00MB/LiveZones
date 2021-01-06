@@ -3,6 +3,7 @@ from app import app, db
 from app.forms import Newevent, Newtimeline, Newtimeblock
 from app.models import Event, Timeline, Timeblock, key_generator
 import sqlite3
+import datetime
 
 def dict_factory(cursor, row):
     d = {}
@@ -57,10 +58,12 @@ def newtimeline(code):
 def newtimeblock(code):
     form = Newtimeblock()
     if form.validate_on_submit():
-        timeblock = Timeblock(timelineid = int(request.cookies.get('timelineid')), blockstart = form.blockstart.data, blockend = form.blockend.data)
+        blockstart = datetime.datetime.combine(datetime.date(2020,1,1),form.blockstart.data)
+        blockend = datetime.datetime.combine(datetime.date(2020,1,1),form.blockend.data)
+        timeblock = Timeblock(timelineid = int(request.cookies.get('timelineid')), blockstart = blockstart, blockend = blockend)
         print(timeblock.blockstart)
-        #db.session.add(timeblock)
-        #db.session.commit()
+        db.session.add(timeblock)
+        db.session.commit()
         return redirect('/'+code)
     return render_template('create-timeblock.html', form=form)
 

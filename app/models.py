@@ -22,6 +22,6 @@ class Timeline(db.Model):
 
 class Timeblock(db.Model):
     blockid = db.Column(db.Integer, index=True, primary_key=True)
-    blockstart = db.Column(db.String(50))
-    blockend = db.Column(db.String(50))
+    blockstart = db.Column(db.DateTime)
+    blockend = db.Column(db.DateTime)
     timelineid = db.Column(db.Integer, db.ForeignKey('timeline.id'))
