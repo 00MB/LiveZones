@@ -1,8 +1,8 @@
 """table update
 
-Revision ID: ef6d9eab5b35
+Revision ID: 5b9853badee2
 Revises: 
-Create Date: 2021-01-05 04:22:18.092236
+Create Date: 2021-01-06 01:42:03.032805
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'ef6d9eab5b35'
+revision = '5b9853badee2'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -41,7 +41,6 @@ def upgrade():
     sa.Column('blockid', sa.Integer(), nullable=False),
     sa.Column('blockstart', sa.DateTime(), nullable=True),
     sa.Column('blockend', sa.DateTime(), nullable=True),
-    sa.Column('recurring', sa.Boolean(), nullable=True),
     sa.Column('timelineid', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['timelineid'], ['timeline.id'], ),
     sa.PrimaryKeyConstraint('blockid')

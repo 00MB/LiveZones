@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, make_response, request
 from app import app, db
-from app.forms import Newevent, Newtimeline
+from app.forms import Newevent, Newtimeline, Newtimeblock
 from app.models import Event, Timeline, Timeblock, key_generator
 
 @app.route('/')
@@ -36,7 +36,9 @@ def newtimeline(code):
         timeline = Timeline(name = form.name.data, eventkey = code)
         db.session.add(timeline)
         db.session.commit()
-        return redirect('/'+timeline.eventkey)
+        res = make_response(redirect('/'+timeline.eventkey))
+        res.set_cookie('timelineid', str(timeline.id + 1))
+        return res
     return render_template('create-timeline.html', form=form)
 
 @app.route('/newtimeblock/<code>', methods=['GET', 'POST'])
@@ -47,5 +49,5 @@ def newtimeblock(code):
         db.session.add(timeblock)
         db.session.commit()
         return redirect('/'+code)
-    return render_template('create-timeline.html', form=form)
+    return render_template('create-timeblock.html', form=form)
 
