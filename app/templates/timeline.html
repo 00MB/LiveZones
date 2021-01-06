@@ -2,17 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../static/css/jquery.ganttView.css"
-    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/gantt.css" type="text/css" />
     <title>Timeline</title>
     <style media="screen">
       body {
@@ -30,22 +26,9 @@
       <h1>Name: {{ event.eventname }}</h1>
       <h1>Code: {{ event.eventkey }}</h1>
     </header>
-    <div class="ganttChart"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/js/date.js"></script>
-    <script
-      type="text/javascript"
-      src="../static/js/jquery.ganttView.js"
-    ></script>
-    <script type="text/javascript" src="../json/data.js"></script>
-    <script type="text/javascript">
-      $(function () {
-        $(".ganttChart").ganttView({
-          slideWidth: 900,
-          data: ganttData,
-        });
-      });
-    </script>
+    <div id="chart"></div>
+    <script src="../static/js/gantt.js"></script>
+    <script src="../static/js/initialize-gantt.js"></script>
     <footer>
       <button
         type="submit"
@@ -53,7 +36,12 @@
       >
         Add subtimeline
       </button>
-      <button type="submit" onclick="">Return to menu</button>
+      <button
+        type="submit"
+        onclick="window.location.href='/newtimeblock/{{ event.eventkey }}';"
+      >
+        Add timeblock
+      </button>
     </footer>
   </body>
 </html>

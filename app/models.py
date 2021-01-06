@@ -24,5 +24,4 @@ class Timeblock(db.Model):
     blockid = db.Column(db.Integer, index=True, primary_key=True)
     blockstart = db.Column(db.DateTime)
     blockend = db.Column(db.DateTime)
-    recurring = db.Column(db.Boolean, default=False)
     timelineid = db.Column(db.Integer, db.ForeignKey('timeline.id'))

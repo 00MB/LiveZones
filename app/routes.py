@@ -39,3 +39,13 @@ def newtimeline(code):
         return redirect('/'+timeline.eventkey)
     return render_template('create-timeline.html', form=form)
 
+@app.route('/newtimeblock/<code>', methods=['GET', 'POST'])
+def newtimeblock(code):
+    form = Newtimeblock()
+    if form.validate_on_submit():
+        timeblock = Timeblock(timelineid = form.timelineid.data, blockstart = form.blockstart.data, blockend = form.blockend.data, eventkey = code)
+        db.session.add(timeblock)
+        db.session.commit()
+        return redirect('/'+code)
+    return render_template('create-timeline.html', form=form)
+

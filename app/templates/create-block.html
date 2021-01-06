@@ -26,19 +26,11 @@
           {{ form.csrf_token }}
           <p>
             <br />
-            {{ form.name(size=32) }}
-          </p>
-          <p>
-            <br />
             {{ form.blockstart() }}
           </p>
           <p>
             <br />
             {{ form.blockend() }}
-          </p>
-          <p>
-            <br />
-            {{ form.recurring() }}
           </p>
           <button>{{ form.submit() }}</button>
         </form>
