@@ -123,7 +123,8 @@ input[type="number"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+.button {
   background-color: #434343;
   outline: none;
 }
