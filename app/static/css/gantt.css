@@ -1,8 +1,8 @@
 .gfb-gantt-wrapper {
   --entry-color: #7dca5c;
   --border-color: rgba(0, 0, 0, 0.1);
-  --background-color: #f9f9f9;
-  --hovered-background: #f0f0f0;
+  --background-color: #212121;
+  --hovered-background: #323232;
 }
 
 .gfb-gantt-wrapper {
@@ -24,6 +24,7 @@
 .gfb-gantt-header {
   display: flex;
   padding: 10px 0px 10px 5px;
+  color: #cccccc;
 }
 
 .gfb-gantt-sidebar-header {
@@ -31,6 +32,7 @@
   padding: 10px 5px 10px 5px;
   background-color: var(--background-color);
   border-right: 1px solid var(--border-color);
+  color: #cccccc;
 }
 
 .gfb-gantt-content {

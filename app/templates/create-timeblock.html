@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
@@ -25,20 +26,22 @@
         <form action="" method="post">
           {{ form.csrf_token }}
           <p>
+            Start time:
             <br />
             {{ form.blockstart() }}
           </p>
           <p>
+            End time:
             <br />
             {{ form.blockend() }}
           </p>
-          <button>{{ form.submit() }}</button>
+          {{ form.submit(class_="button") }}
         </form>
         {% endblock%}
 
         <!-- Footer -->
         <div id="formFooter">
-          <a href="/">Back to menu</a>
+          <a href="/{{ code }}">Back to event</a>
         </div>
       </div>
     </div>

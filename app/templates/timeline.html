@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
@@ -13,6 +14,7 @@
     <style media="screen">
       body {
         font-family: "Lato", sans-serif;
+        background-color: #323232;
       }
       header,
       .grid {
@@ -39,7 +41,7 @@
       //Parameters that the chart expects
       let params = {
         sidebarHeader: "Unused right now",
-        noDataFoundMessage: "<div class='neweventmessage'><h1>Add a subtimeline to start</h1></div>",
+        noDataFoundMessage: "<div class='neweventmessage'><h1>Add a timeline to start</h1></div>",
         startTimeAlias: "blockstart",
         endTimeAlias: "blockend",
         idAlias: "timelineid",
@@ -73,6 +75,7 @@
       <p class="brief">
         HOW TO USE: First, create your own timeline, once created add a time and
         your timeline will show. You can add multiple times.
+        <a href="/"><u>Back to main menu</a>
       </p>
     </footer>
   </body>

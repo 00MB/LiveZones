@@ -52,7 +52,7 @@ def newtimeline(code):
         res = make_response(redirect('/'+timeline.eventkey))
         res.set_cookie('timelineid', str(timeline.id))
         return res
-    return render_template('create-timeline.html', form=form)
+    return render_template('create-timeline.html', form=form, code=code)
 
 @app.route('/newtimeblock/<code>', methods=['GET', 'POST'])
 def newtimeblock(code):
@@ -65,5 +65,5 @@ def newtimeblock(code):
         db.session.add(timeblock)
         db.session.commit()
         return redirect('/'+code)
-    return render_template('create-timeblock.html', form=form)
+    return render_template('create-timeblock.html', form=form, code=code)
 

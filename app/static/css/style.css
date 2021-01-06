@@ -1,7 +1,7 @@
 /* BASIC */
 
 html {
-  background-color: #56baed;
+  background-color: #323232;
 }
 
 body {
@@ -11,8 +11,12 @@ body {
   margin: 0;
 }
 
+p {
+  color: white;
+}
+
 a {
-  color: #92badd;
+  color: #cccccc;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -44,12 +48,16 @@ h2 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: animatebottom;
+  animation-duration: 1.5s;
 }
 
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
+  background: #212121;
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -61,8 +69,8 @@ h2 {
 }
 
 #formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
+  background-color: #212121;
+  border-top: 1px solid #323232;
   padding: 25px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
@@ -70,18 +78,17 @@ h2 {
 }
 
 button,
+.button,
 input[type="reset"] {
-  background-color: #56baed;
+  background-color: #323232;
   border: none;
-  color: white;
+  color: #cccccc;
   padding: 15px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
-  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
@@ -89,16 +96,19 @@ input[type="reset"] {
 
 input[type="button"]:hover,
 button[type="submit"]:hover,
-input[type="reset"]:hover {
-  background-color: #39ace7;
+input[type="reset"]:hover,
+.button:hover {
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  background-color: #434343;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="number"] {
-  background-color: #f6f6f6;
+  background-color: #323232;
   border: none;
-  color: #0d0d0d;
+  color: #cccccc;
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
@@ -106,17 +116,21 @@ input[type="number"] {
   font-size: 16px;
   margin: 5px;
   width: 85%;
-  border: 2px solid #f6f6f6;
+  border: 2px solid #121212;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus,
+input[type="number"]:focus {
+  background-color: #434343;
+  outline: none;
+}
+
 header,
 footer {
-  background-color: #fff;
+  background-color: #212121;
 }
 
 footer {
@@ -128,7 +142,7 @@ footer {
 input[type="text"]:placeholder,
 input[type="password"]:placeholder,
 input[type="number"]:placeholder {
-  color: #cccccc;
+  color: #000;
 }
 
 .neweventmessage,
@@ -137,5 +151,26 @@ input[type="number"]:placeholder {
 }
 
 .brief {
-  margin: 3px;
+  margin: 5px;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+@keyframes animatebottom {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
